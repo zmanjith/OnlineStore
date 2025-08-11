@@ -4,7 +4,7 @@ const app = express();
 const port = 3000; // Change port for each service if running together
 
 app.get('/', (req, res) => {
-  res.send('Its a [service-name]!');
+  res.send('Its a Book Service!');
 });
 
 app.listen(port, () => {
