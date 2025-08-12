@@ -16,11 +16,30 @@ jobs:
       with:
         node-version: '18'
     
-    - name: install dependencies
-      run: npm install
+    # install dependencies and test done as single step for each the four services
+    - name: install dependencies and test books-services
+      run: |
+        npm install
+        npm test
+      working-directory: ./services/books-service
 
-    - name: Run tests
-      run: npm test
+    - name: install dependencies and test for orders-service
+      run: |
+        npm install
+        npm test
+      working-directory: ./services/orders-service
+
+    - name: install dependencies and test  for users-service
+      run: |
+        npm install
+        npm test
+      working-directory: ./services/users-service
+
+    - name: install dependencies and test  for frontend
+      run: |
+        npm install
+        npm test
+      working-directory: ./services/frontend
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
