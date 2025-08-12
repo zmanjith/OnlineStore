@@ -39,7 +39,7 @@ jobs:
       run: |
         npm install
         npm test
-      working-directory: ./services/frontend
+      working-directory: ./frontend
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
