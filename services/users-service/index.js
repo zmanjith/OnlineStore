@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const port = 3000; // Change port for each service if running together
 
-app.get('/', (req, res) => {
+app.get('/users', (req, res) => {
   res.send('Its a User Service!');
 });
 

@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: books-service
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: books-service
   ports:
     - port: 3000
       targetPort: 3000
+      nodePort: 30001
